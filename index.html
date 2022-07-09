@@ -5,6 +5,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
+
   <title>Animal Care - Every life matters</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
@@ -17,15 +18,20 @@
 
 <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-  <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
+  <!-- Favicons linking stuff -->
 
+<div class="linkingstuff">
+  <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#712cf9">
+</div>
+
+
+<!-- some css here  -->
 
   <style>
     .bd-placeholder-img {
@@ -84,8 +90,20 @@
   <!-- Custom styles for this template -->
   <link href="carousel.css" rel="stylesheet">
 </head>
+
 <body>
   
+ <!-- Navbar code here -->
+
+
+<!-- testing donation page link  -->
+
+<!-- <div class="tester">
+  <p><a class="btn btn-primary btn-lg" href="https://rzp.io/l/J1GtDk0gFL">try payment</a></p>
+</div> -->
+
+
+
 <header>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
@@ -109,15 +127,65 @@
           <a class="nav-link" href="#volunteerus">Volunteer</a>
         </li>
       </ul>
-      <button type="button" class="btn btn-danger" type="submit">
+      <!-- <button type="button" class="btn btn-danger" href="https://rzp.io/l/J1GtDk0gFL">
         Donate
-      </button>
+      </button> -->
+      <a class="btn btn-danger" href="https://rzp.io/l/J1GtDk0gFL">Donate</a>
     </div>
   </div>
 </nav>
 </header>
 
-<main>
+
+<!-- skipped this part and used donation page template by razorpay instead -->
+
+<!-- Payment integration code here -->
+<!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_o7qQQQ2aZOH4m7", // Enter the Key ID generated from the Dashboard
+    "amount": "600980", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_JnNBon7HTp2CB3", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3299cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script> -->
+<!-- payment integration done -->
+
+
+ <!-- carousel here  -->
 
 <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -140,7 +208,7 @@
         </div> -->
       </div>
     </div>
-    <div class="carousel-item ">
+    <div class="carousel-item ">  
      
       <img src="new cat.jpg" class="d-block w-100" alt="..." />
       <div class="container">
@@ -173,10 +241,7 @@
   </button>
 </div>
 
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
+<!-- action options here  -->
 
 <div id="volunteerus" class="container marketing">
 
@@ -187,14 +252,14 @@
 
       <h2 class="fw-normal">Emergency</h2>
       <p>If you find an Unwell or injured stray animal, do contact us immediately.</p>
-      <p><a class="btn btn-primary btn-lg" href="#">Call Us</a></p>
+      <p><a class="btn btn-primary btn-lg" href="tel:+91 8692890858">Call Us</a></p>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img src="donate.png" width="210" height="140" alt="">
 
       <h2 class="fw-normal">Donate</h2>
       <p>Help us raise funds for the treatment of the rescued animals.</p>
-      <p><a class="btn btn-primary btn-lg" href="#">Donate</a></p>
+      <a class="btn btn-primary btn-lg" href="https://rzp.io/l/J1GtDk0gFL">Donate</a>
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
       <img src="join us.jpg" width="140" height="140" alt="">
@@ -202,14 +267,58 @@
       <h2 class="fw-normal">Join Us</h2>
       <p>Be a part of our team and let's help our friends together.</p>
       <p><a class="btn btn-primary btn-lg" href="#">Join</a></p>
+      
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
 
-
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+        "key": "rzp_test_o7qQQQ2aZOH4m7", // Enter the Key ID generated from the Dashboard
+        "amount": "6000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "Acme Corp",
+        "description": "Test Transaction",
+        "image": "https://example.com/your_logo",
+        "order_id": "order_JnNBon7HTp2CB3", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response){
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature)
+        },
+        "prefill": {
+            "name": "Harsh",
+            "email": "gaurav.kumar@example.com",
+            "contact": "9999999999"
+        },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+            "color": "#3299cc"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response){
+            alert(response.error.code);
+            alert(response.error.description);
+            alert(response.error.source);
+            alert(response.error.step);
+            alert(response.error.reason);
+            alert(response.error.metadata.order_id);
+            alert(response.error.metadata.payment_id);
+    });
+    document.getElementById('rzp-button2').onclick = function(e){
+        rzp1.open();
+        e.preventDefault();
+    }
+    </script>
   
   <!-- /END THE FEATURETTES -->
 
-</div><!-- /.container -->
+</div>
+
+<!-- about us here  -->
 
 <div id="aboutus" class="container marketing">
 
@@ -280,16 +389,9 @@
   <!-- /END THE FEATURETTES -->
 
 </div>
-<!-- FOOTER -->
-<!-- <footer class="container">
-    <h6 class="float-centre">Socials</h6>
-    
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p class="float-centre"> Animal Care © 2022 </p>
-    <p><img src="animal_logo-modified.jpeg" alt=""></p>
-  
-  
-</footer> -->
+
+
+<!-- footer with contact details here  -->
 
 <footer class="bg-light text-center text-white">
   <!-- Grid container -->
@@ -316,6 +418,12 @@
          role="button"
          ><i class="fab fa-instagram"><img src="twitter logo.png" alt="" height="30px" width="35px"></i
         ></a>
+
+      <a
+         href="#!"
+         role="button"
+         ><i class="fab fa-call"><img src="call logo.png" alt="" height="30px" width="35px">+91-9876543210</i
+        ></a>
     </section>
     <!-- Section: Social media -->
   </div>
@@ -323,17 +431,17 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">Animal Care</a>
+    © 2022 Copyright:
+    <a class="text-white" href="#">Animal Care</a>
   </div>
   <!-- Copyright -->
 </footer>  
 </main>
 
 
-  <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<!-- js scripts integration here  -->
 
-  <!-- <script src="//code.tidio.co/pgevxbkqtdmb0v8n4a5blvhtdps777pj.js" async></script> -->
+  <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <script src="//code.tidio.co/wu2tsjtu1zrbskrhmv9j8quckhmftb6b.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
